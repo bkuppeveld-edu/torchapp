@@ -1,0 +1,16 @@
+const Ember = {
+    id: URLKEY,
+    user: LinkedUser / anonymous,
+    title: String,
+    combatants: [
+        partymember,
+        creature
+    ],
+}
+
+Dashboard
+Encounter 
+- Monstermanual -> zoeken van zaken & toevoegen (actieve combat aanzetten)
+- Combat -> actieve combat tonen
+- Party -> party members toevoegen / scrapen van dndbeyond
+
