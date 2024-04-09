@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <SimpleGrid columns={1}>
-      <Box>
+      <Box> 
       <Flex padding={4} boxShadow='xs'rounded='md' margin={4} justify='space-between' align='center'>
         <Menu>
           <Flex flexDirection='row' align='center'>

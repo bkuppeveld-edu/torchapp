@@ -133,7 +133,7 @@ const CreateCustomMonster = () => {
             monster_wisdom: data.wisdom,
             monster_charisma: data.charisma,
             monster_proficiency: data.proficiencies,
-            monster_saving_throws: data.saving_throws,
+            monster_saving_throws: data.proficiencies,
             monster_skills: data.skills,
             monster_damage_vulnerabilities: data.damage_vulnerabilities,
             monster_damage_resistances: data.damage_resistances,
@@ -161,6 +161,8 @@ const CreateCustomMonster = () => {
     useEffect(() => {
       getMonstersFromApi()
     }, [])
+
+    
   
     return (
     
@@ -276,7 +278,7 @@ const CreateCustomMonster = () => {
                 
                       ? createMonster.monster_proficiency
                       : createMonster.monster_proficiency.map(
-                          (item, index) => item.value + '  ' + item.proficiency.name
+                          (item, index) => item.proficiency.name + ' ' + item.value + '\n'
                         )
                   }
                   onChange={handleChange}
@@ -285,8 +287,20 @@ const CreateCustomMonster = () => {
            
               <Box display="flex" flexDirection="row"  margin={4}>
                 <Text>Saving Throws:</Text>
-                <Input name="monster_saving_throws" placeholder="Saving Throws" value={createMonster.monster_saving_throws} onChange={handleChange}/>
-                </Box>
+                <Textarea
+                  name="monster_proficiency"
+                  placeholder="Proficiency"
+                  value={
+                    !createMonster.monster_saving_throws ||
+                    !Array.isArray(createMonster.monster_saving_throws) 
+                
+                      ? createMonster.monster_saving_throws
+                      : createMonster.monster_saving_throws.map(
+                          (item, index) => item.proficiency.name + ' ' + item.value + '\n'
+                        )
+                  }
+                  onChange={handleChange}
+                />                </Box>
            
               <Box display="flex" flexDirection="row"  margin={4}>
                 <Text>Skills:</Text>
